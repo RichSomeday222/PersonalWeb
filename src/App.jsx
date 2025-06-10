@@ -241,10 +241,7 @@ const Portfolio = () => {
                   I'm a passionate Computer Science student at the University of Minnesota with a strong foundation in 
                   full-stack development and AI/ML technologies. Currently maintaining a 3.97 GPA and set to graduate in May 2025.
                 </p>
-                <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                  My experience spans from building scalable web applications to implementing cutting-edge AI solutions. 
-                  I've worked with startups and established companies, always focusing on creating efficient, user-friendly solutions.
-                </p>
+                
                 <div className="flex items-center space-x-6">
                   <div className="flex items-center space-x-2 bg-blue-100 px-4 py-2 rounded-full">
                     <GraduationCap className="text-blue-600" size={20} />
@@ -332,6 +329,11 @@ const Portfolio = () => {
                 <h3 className="text-lg font-bold text-gray-900 mb-2">Research Assistant</h3>
                 <p className="text-purple-600 mb-2 font-medium">GNN-101 Project</p>
                 <p className="text-gray-600 text-sm">Oct 2024 – Present | Supervisor: Qianwen Wang</p>
+              </div>
+              <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6 border border-green-200">
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Research Assistant</h3>
+                <p className="text-green-600 mb-2 font-medium">Minnesota NLP Lab</p>
+                <p className="text-gray-600 text-sm">May 2025 – Present | Supervisor: Dongyeop Kang</p>
               </div>
             </div>
           </div>
