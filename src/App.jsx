@@ -170,12 +170,15 @@ const Portfolio = () => {
             <div className="mb-8 flex justify-center">
               <div className="relative">
                 <div className="w-48 h-48 rounded-full bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center border-4 border-white shadow-xl">
-                  {/* Placeholder for photo - replace with actual image */}
-                  <img 
-                    src="/profile.png" 
-                    alt="Chloe Chen" 
-                    className="w-48 h-48 rounded-full object-cover border-4 border-white shadow-xl"
-                  />
+                <img 
+                  src="myphoto.jpg" 
+                  alt="Chloe Chen" 
+                  className="w-48 h-48 rounded-full object-cover border-4 border-white shadow-xl"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.nextSibling.style.display = 'flex';
+                  }}
+                />
                 </div>
                 <div className="absolute -bottom-2 -right-2 w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center border-4 border-white">
                   <span className="text-white text-xl">👋</span>
@@ -192,7 +195,7 @@ const Portfolio = () => {
               Full-Stack Software Engineer & AI/ML Enthusiast
             </p>
             <p className="text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
-              Computer Science @ University of Minnesota | GPA: 3.97/4.00 | Graduating May 2025
+              Computer Science @ University of Minnesota | GPA: 3.97/4.00 | Graduated May 2025
             </p>
             
             <div className="flex justify-center space-x-6 mb-12">
@@ -239,7 +242,7 @@ const Portfolio = () => {
               <div>
                 <p className="text-lg text-gray-700 mb-6 leading-relaxed">
                   I'm a passionate Computer Science student at the University of Minnesota with a strong foundation in 
-                  full-stack development and AI/ML technologies. Currently maintaining a 3.97 GPA and set to graduate in May 2025.
+                  full-stack development and AI/ML technologies.
                 </p>
                 
                 <div className="flex items-center space-x-6">
