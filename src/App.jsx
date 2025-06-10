@@ -116,7 +116,7 @@ const Portfolio = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Chloe Chen
+              Yuxin Chen
             </div>
             
             {/* Desktop Menu */}
@@ -171,12 +171,11 @@ const Portfolio = () => {
               <div className="relative">
                 <div className="w-48 h-48 rounded-full bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center border-4 border-white shadow-xl">
                   {/* Placeholder for photo - replace with actual image */}
-                  <div className="text-center">
-                    <Camera size={48} className="text-gray-400 mx-auto mb-2" />
-                    <p className="text-sm text-gray-500">Add your photo here</p>
-                    <p className="text-xs text-gray-400 mt-1">Replace this div with:</p>
-                    <p className="text-xs text-gray-400">&lt;img src="your-photo.jpg" /&gt;</p>
-                  </div>
+                  <img 
+                    src="/profile.png" 
+                    alt="Chloe Chen" 
+                    className="w-48 h-48 rounded-full object-cover border-4 border-white shadow-xl"
+                  />
                 </div>
                 <div className="absolute -bottom-2 -right-2 w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center border-4 border-white">
                   <span className="text-white text-xl">👋</span>
@@ -186,7 +185,7 @@ const Portfolio = () => {
 
             <h1 className="text-5xl sm:text-7xl font-bold mb-6 text-gray-900">
               <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-                Yuxin 'Chloe' Chen
+                Yuxin Chen
               </span>
             </h1>
             <p className="text-xl sm:text-2xl text-gray-700 mb-8 max-w-3xl mx-auto font-medium">
@@ -434,7 +433,7 @@ const Portfolio = () => {
       <footer className="py-8 px-4 sm:px-6 lg:px-8 border-t border-gray-200 bg-gray-50">
         <div className="max-w-6xl mx-auto text-center">
           <p className="text-gray-600">
-            © 2025 Yuxin 'Chloe' Chen. Built with React and Tailwind CSS.
+            © 2025 Yuxin Chen. Built with React and Tailwind CSS.
           </p>
           <p className="text-gray-500 text-sm mt-2">
             Ready to graduate May 2025 • Seeking full-time opportunities
