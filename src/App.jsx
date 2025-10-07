@@ -35,7 +35,7 @@ const Portfolio = () => {
         company: 'Stanford HAI',
         role: 'Research Intern',
         period: 'Upcoming',
-        location: 'United States',
+        location: 'Stanford University',
         supervisor: 'Dr. Jiaxin Pei',
         link: 'https://hai.stanford.edu/'
       },
@@ -61,7 +61,7 @@ const Portfolio = () => {
         company: 'Quantlink',
         role: 'AI Engineer',
         period: '2025.07 - Present',
-        location: 'Remote'
+        location: 'Minneapolis, MN'
       },
       {
         company: 'Artisk.AI',
