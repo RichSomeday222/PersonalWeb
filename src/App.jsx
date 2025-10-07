@@ -29,65 +29,75 @@ const Portfolio = () => {
     setIsDarkMode(!isDarkMode);
   };
 
-  const experiences = [
-    {
-      company: 'Stanford HAI',
-      role: 'Research Intern',
-      period: 'Upcoming',
-      location: 'United States',
-      supervisor: 'Dr. Jiaxin Pei'
-    },
-    {
-      company: 'Quantlink',
-      role: 'Research Intern',
-      period: '2025.07 - Present',
-      location: 'Remote'
-    },
-    {
-      company: 'Minnesota NLP Group',
-      role: 'Research Assistant',
-      period: '2025.05 - Present',
-      location: 'University of Minnesota',
-      supervisor: 'Prof. Dongyeop Kang'
-    },
-    {
-      company: 'Artisk.AI',
-      role: 'Software Engineering Intern',
-      period: '2025.03 - 2025.06',
-      location: 'Remote'
-    },
-    {
-      company: 'CSCI 1913',
-      role: 'Teaching Assistant',
-      period: '2025.01 - 2025.05',
-      location: 'University of Minnesota'
-    },
-    {
-      company: 'Visual Intelligence Lab',
-      role: 'Research Assistant',
-      period: '2024.10 - Present',
-      location: 'University of Minnesota',
-      supervisor: 'Prof. Qianwen Wang'
-    },
-    {
-      company: 'Technological Leadership Institute',
-      role: 'Student Worker',
-      period: '2024.09 - 2024.12',
-      location: 'University of Minnesota'
-    },
-    {
-      company: 'Snarkify, Inc.',
-      role: 'Software Engineering Intern',
-      period: '2024.06 - 2024.08',
-      location: 'Palo Alto, CA'
-    },
-    {
-      company: 'Beijing Jinxinxiutu Technology',
-      role: 'Software Development Intern',
-      period: '2023.07 - 2023.08',
-      location: 'Beijing, China'
-    }
-  ];
+  const experiences = {
+    research: [
+      {
+        company: 'Stanford HAI',
+        role: 'Research Intern',
+        period: 'Upcoming',
+        location: 'United States',
+        supervisor: 'Dr. Jiaxin Pei',
+        link: 'https://hai.stanford.edu/'
+      },
+      {
+        company: 'Minnesota NLP Group',
+        role: 'Research Assistant',
+        period: '2025.05 - Present',
+        location: 'University of Minnesota',
+        supervisor: 'Prof. Dongyeop Kang',
+        link: 'https://minnesotanlp.github.io/'
+      },
+      {
+        company: 'Visual Intelligence Lab',
+        role: 'Research Assistant',
+        period: '2024.10 - Present',
+        location: 'University of Minnesota',
+        supervisor: 'Prof. Qianwen Wang',
+        link: 'https://qianwen.info/pages/lab_members/'
+      }
+    ],
+    industry: [
+      {
+        company: 'Quantlink',
+        role: 'AI Engineer',
+        period: '2025.07 - Present',
+        location: 'Remote'
+      },
+      {
+        company: 'Artisk.AI',
+        role: 'Software Engineering Intern',
+        period: '2025.03 - 2025.06',
+        location: 'Remote'
+      },
+      {
+        company: 'Snarkify, Inc.',
+        role: 'Software Engineering Intern',
+        period: '2024.06 - 2024.08',
+        location: 'Palo Alto, CA'
+      },
+      {
+        company: 'Beijing Jinxinxiutu Technology',
+        role: 'Software Development Intern',
+        period: '2023.07 - 2023.08',
+        location: 'Beijing, China'
+      }
+    ],
+    others: [
+      {
+        company: 'CSCI 1913',
+        role: 'Teaching Assistant',
+        period: '2025.01 - 2025.05',
+        location: 'University of Minnesota',
+        link: 'https://umtc.catalog.prod.coursedog.com/courses/8096671'
+      },
+      {
+        company: 'Technological Leadership Institute',
+        role: 'Student Worker',
+        period: '2024.09 - 2024.12',
+        location: 'University of Minnesota'
+      }
+    ]
+  };
 
 
   const publications = [
@@ -186,27 +196,108 @@ const Portfolio = () => {
         {activeSection === 'experience' && (
           <section className="mb-16">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-8">Experience</h2>
-            <div className="space-y-4">
-              {experiences.map((exp, index) => (
-                <div key={index} className="flex items-start space-x-4">
-                  <div className="text-sm text-gray-600 dark:text-gray-400 font-mono min-w-[120px]">
-                    {exp.period}
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex items-center space-x-2">
-                      <span className="font-semibold text-gray-900 dark:text-gray-100">{exp.role}</span>
-                      <span className="text-gray-400 dark:text-gray-500">•</span>
-                      <span className="text-blue-600 dark:text-blue-400">{exp.company}</span>
+            
+            {/* Research */}
+            <div className="mb-12">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-6 border-b border-gray-200 dark:border-gray-700 pb-2">Research</h3>
+              <div className="space-y-4">
+                {experiences.research.map((exp, index) => (
+                  <div key={index} className="flex items-start space-x-4">
+                    <div className="text-sm text-gray-600 dark:text-gray-400 font-mono min-w-[120px]">
+                      {exp.period}
                     </div>
-                    <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                      {exp.location}
-                      {exp.supervisor && (
-                        <span className="ml-2">| {exp.supervisor}</span>
-                      )}
+                    <div className="flex-1">
+                      <div className="flex items-center space-x-2">
+                        <span className="font-semibold text-gray-900 dark:text-gray-100">{exp.role}</span>
+                        <span className="text-gray-400 dark:text-gray-500">•</span>
+                        {exp.link ? (
+                          <a 
+                            href={exp.link} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline"
+                          >
+                            {exp.company}
+                          </a>
+                        ) : (
+                          <span className="text-blue-600 dark:text-blue-400">{exp.company}</span>
+                        )}
+                      </div>
+                      <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                        {exp.location}
+                        {exp.supervisor && (
+                          <span className="ml-2">| {exp.supervisor}</span>
+                        )}
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
+            </div>
+
+            {/* Industry */}
+            <div className="mb-12">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-6 border-b border-gray-200 dark:border-gray-700 pb-2">Industry</h3>
+              <div className="space-y-4">
+                {experiences.industry.map((exp, index) => (
+                  <div key={index} className="flex items-start space-x-4">
+                    <div className="text-sm text-gray-600 dark:text-gray-400 font-mono min-w-[120px]">
+                      {exp.period}
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center space-x-2">
+                        <span className="font-semibold text-gray-900 dark:text-gray-100">{exp.role}</span>
+                        <span className="text-gray-400 dark:text-gray-500">•</span>
+                        <span className="text-blue-600 dark:text-blue-400">{exp.company}</span>
+                      </div>
+                      <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                        {exp.location}
+                        {exp.supervisor && (
+                          <span className="ml-2">| {exp.supervisor}</span>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Others */}
+            <div className="mb-12">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-6 border-b border-gray-200 dark:border-gray-700 pb-2">Others</h3>
+              <div className="space-y-4">
+                {experiences.others.map((exp, index) => (
+                  <div key={index} className="flex items-start space-x-4">
+                    <div className="text-sm text-gray-600 dark:text-gray-400 font-mono min-w-[120px]">
+                      {exp.period}
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center space-x-2">
+                        <span className="font-semibold text-gray-900 dark:text-gray-100">{exp.role}</span>
+                        <span className="text-gray-400 dark:text-gray-500">•</span>
+                        {exp.link ? (
+                          <a 
+                            href={exp.link} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline"
+                          >
+                            {exp.company}
+                          </a>
+                        ) : (
+                          <span className="text-blue-600 dark:text-blue-400">{exp.company}</span>
+                        )}
+                      </div>
+                      <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                        {exp.location}
+                        {exp.supervisor && (
+                          <span className="ml-2">| {exp.supervisor}</span>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </section>
         )}
