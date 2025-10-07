@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://RichSomeday222.github.io/PersonalWeb/sitemap.xml
