@@ -127,7 +127,7 @@ const Portfolio = () => {
               <a href="https://scholar.google.com/citations?hl=en&view_op=list_works&gmla=AH8HC4xKCxdq-rPnxhiODpvLfJACgpyESPnTk70-tDx1I7lpdOsYGiNL6vn9955xbYXxNLPJ8XkcYMUo1KcAnQ&user=W3icPq4AAAAJ" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors" title="Google Scholar">
                 <GraduationCap size={20} />
               </a>
-              <a href="https://linkedin.com/in/yuxin-chen" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors" title="LinkedIn">
+              <a href="https://www.linkedin.com/in/yuxin-chen-895390302/" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors" title="LinkedIn">
                 <Linkedin size={20} />
               </a>
               <a href="https://github.com/RichSomeday222" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors" title="GitHub">
