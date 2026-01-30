@@ -25,6 +25,30 @@ const Portfolio = () => {
     }
   }, [isDarkMode]);
 
+  useEffect(() => {
+    // Load MapMyVisitors script when Miscellaneous section is active
+    if (activeSection === 'miscellaneous') {
+      const script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.id = 'mapmyvisitors';
+      script.src = '//mapmyvisitors.com/map.js?d=5mWLID7yQ44u3jZy3m-hEZ_TEiXaUkEBx4871UI5FWM&cl=ffffff&w=a';
+      script.async = true;
+      
+      const mapContainer = document.getElementById('visitor-map-container');
+      if (mapContainer && !document.getElementById('mapmyvisitors')) {
+        mapContainer.appendChild(script);
+      }
+
+      return () => {
+        // Cleanup: remove script when component unmounts or section changes
+        const existingScript = document.getElementById('mapmyvisitors');
+        if (existingScript) {
+          existingScript.remove();
+        }
+      };
+    }
+  }, [activeSection]);
+
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
   };
@@ -142,7 +166,7 @@ const Portfolio = () => {
           {/* Navigation */}
           <nav className="border-b border-gray-200 dark:border-gray-700 pb-4">
             <div className="flex space-x-8">
-              {['About Me', 'Publications', 'Experience'].map((item) => (
+              {['About Me', 'Publications', 'Experience', 'Miscellaneous'].map((item) => (
                 <button
                   key={item}
                   onClick={() => setActiveSection(item.toLowerCase().replace(' ', ''))}
@@ -326,6 +350,23 @@ const Portfolio = () => {
                   <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">{pub.description}</p>
                 </div>
               ))}
+            </div>
+          </section>
+        )}
+
+        {/* Miscellaneous Section */}
+        {activeSection === 'miscellaneous' && (
+          <section className="mb-16">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-8">Miscellaneous</h2>
+            
+            {/* Visitor Map */}
+            <div>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">Visitor Map</h3>
+              <div className="flex justify-center">
+                <div id="visitor-map-container" className="w-full max-w-2xl">
+                  {/* MapMyVisitors script will be loaded here */}
+                </div>
+              </div>
             </div>
           </section>
         )}
